@@ -16,15 +16,15 @@ type
 
 procedure StartListening :=
 try
-
-var localEndPoint := ParseEndPoint(ReadAllText('server adress.txt'));
-
-var listener := new Socket(
-  AddressFamily.InterNetwork,
-  SocketType.Stream,
-  ProtocolType.Tcp
-);
-
+  
+  var localEndPoint := ParseEndPoint(ReadAllText('server adress.txt'));
+  
+  var listener := new Socket(
+    AddressFamily.InterNetwork,
+    SocketType.Stream,
+    ProtocolType.Tcp
+  );
+  
   listener.Bind(localEndPoint);
   listener.Listen(10);
   

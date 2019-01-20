@@ -47,7 +47,8 @@ begin
         sock.Send(str.ToArray);
       end;
       
-      ChatOutput.WriteNewLine($'<{nick}: {msg}');
+      ChatOutput.WriteNewLine($'<{nick}: {msg}', System.ConsoleColor.Green);
+      System.Console.ForegroundColor := System.ConsoleColor.Gray;
       
     end).Start;
     
