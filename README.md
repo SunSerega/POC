@@ -13,11 +13,12 @@ All computers that supposed to connect - must have same ip and port.
 
 2. Getting ip and port:
 
-If you don't know how to portfoward - you should use things like hamachi.\
-In that case, copy your ip from hamachi (or whatever you use) and choose any port number.\
-Then send complite file to all people who you want to join.
+If you don't know how to portforward - you should use things like hamachi.\
+In that case, copy your ip from hamachi (or whatever you use).\
+Otherwise just copy your main IPv4.\
+Then choose random port and send complete `server adress.txt` file to all people who you want to join.
 
 3. Launching:
 
 First always start Server.\
-Then - start your Client and say to other to other people to start their Clients.
+Then - start your Client and say other people to start their Clients.
