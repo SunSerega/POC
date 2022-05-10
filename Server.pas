@@ -17,7 +17,11 @@ type
 procedure StartListening :=
 try
   
-  var localEndPoint := ParseEndPoint(ReadAllText('server adress.txt'));
+//  var localEndPoint := ParseEndPoint(ReadAllText('server adress.txt'));
+  
+  var ipHostInfo := Dns.Resolve(Dns.GetHostName());
+  var ipAddress := ipHostInfo.AddressList[0];
+  var localEndPoint := new IPEndPoint(ipAddress, 11000);
   
   var listener := new Socket(
     AddressFamily.InterNetwork,

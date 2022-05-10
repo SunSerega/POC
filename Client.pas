@@ -24,7 +24,12 @@ begin
       SocketType.Stream,
       ProtocolType.Tcp
     );
-    sock.Connect(ParseEndPoint(ReadAllText('server adress.txt')));
+    
+//    var remoteEP := ParseEndPoint(ReadAllText('server adress.txt'));
+    var ipAddress := new System.Net.IPAddress(ReadString($'Connect to:').ToWords('.').ConvertAll(byte.Parse));
+    var remoteEP := new IPEndPoint(ipAddress, 11000);
+    
+    sock.Connect(remoteEP);
     
     var nick := ChooseNick;
     sock.Send(Encoding.UTF8.GetBytes(nick));
